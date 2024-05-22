@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --principal-violet: hsl(257, 40%, 49%);
+    --hover-color: hsl(300, 69%, 71%);
+}
+
+body {
+    background: url(images/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-color: var(--principal-violet);
+}
+
+main {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+}
+
+header {
+    display: flex;
+    align-items: start;
+    width: 91%;
+    margin-top: 2em;
+    margin-bottom: 3em;
+
+    img {
+        width: 200px;
+        object-fit: contain;
+    }
+}
+
+section {
+    display: flex;
+    gap: 20px;
+    max-width: 91%;
+}
+
+.text__space {
+    max-width: 600px;
+    padding: 2em;
+}
+
+.img__mockups {
+    max-width: 600px;
+    object-fit: contain;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.918);
+    font-weight: 600;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.918);
+    text-wrap: balance;
+    margin-bottom: 16px;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: var(--principal-violet);
+    background: rgba(255, 255, 255, 0.918);
+    box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &:hover {
+        background: var(--hover-color);
+        color: rgba(255, 255, 255, 0.918);
+    }
+}
+
+footer {
+    width: 75%;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 10px;
+    a {
+        color: rgba(255, 255, 255, 0.918);
+
+        ion-icon {
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.918);
+            padding: 4px;
+            text-align: center;
+            transition: 0.3s linear;
+            font-size: 16px;
+            color: var(--btn-color);
+            transition: 0.2s linear;
+
+            &:hover {
+                color: var(--hover-color);
+                scale: 1.2;
+                border: 1px solid var(--hover-color);
+            }
+        }
+    }
+}
+
+@media (max-width: 977px) {
+    body{
+        background: url(images/bg-mobile.svg);
+        background-repeat: no-repeat;
+        background-position-x: 300px;
+        background-size: 950px;
+        background-position-y: -100px;
+        background-color: var(--principal-violet);
+    }
+    header{
+        width: 600px;
+    }
+    section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text__space{
+        text-align: center;
+    }
+    footer{
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 635px) {
+    body{
+        background-position: -100px;
+    }
+    header{
+        max-width: 400px;
+    }
+    .img__mockups{
+        max-width: 400px;
+    }
+    .text__space{
+        max-width: 320px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    p{
+        font-size: 12px;
+    }
+    button{
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 407px) {
+    header{
+        max-width: 300px;
+        img{
+            width: 150px;
+        }
+    }
+    .img__mockups{
+        max-width: 300px;
+    }
+}
